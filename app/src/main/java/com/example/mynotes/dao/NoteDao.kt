@@ -17,8 +17,8 @@ interface NoteDao {
     @Update
     fun update(update: NoteTable)
 
-//    @Delete
-//    fun delete(id:Int)
+    @Delete
+    fun delete(note: NoteTable)
 
     @Query("SELECT * FROM note_table")
     fun readNotes(): List<NoteTable>
