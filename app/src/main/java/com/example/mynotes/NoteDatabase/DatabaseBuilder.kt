@@ -10,6 +10,7 @@ object DatabaseBuilder {
 
     private var INSTANCE : NoteDatabase? = null
     //if data base is not create them we will create and return otherwise if create we will directly return..........
+
     @OptIn(InternalCoroutinesApi::class)
     fun getDatabase(context : Context):NoteDatabase {
         if (INSTANCE == null) {

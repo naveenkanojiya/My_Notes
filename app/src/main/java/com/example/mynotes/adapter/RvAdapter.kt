@@ -5,12 +5,16 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import android.widget.Toast.makeText
 import androidx.recyclerview.widget.RecyclerView
+import androidx.room.Delete
 import com.example.mynotes.NoteDatabase.DatabaseBuilder
+import com.example.mynotes.databinding.ActivityMainBinding
 import com.example.mynotes.databinding.RvItemBinding
 import com.example.mynotes.models.NoteTable
 
-class RvAdapter(var context:Context, var noteList:ArrayList<NoteTable>):RecyclerView.Adapter<RvAdapter.MyViewHolder>() {
+class RvAdapter(var context:Context, var noteList:ArrayList<NoteTable>,var deleteNote: (Int)->Unit):RecyclerView.Adapter<RvAdapter.MyViewHolder>() {
 
 
     inner class MyViewHolder(val binding :RvItemBinding):RecyclerView.ViewHolder(binding.root)
@@ -29,10 +33,10 @@ class RvAdapter(var context:Context, var noteList:ArrayList<NoteTable>):Recycler
 
         holder.itemView.setOnLongClickListener(object :View.OnLongClickListener{
             override fun onLongClick(p0: View?): Boolean {
-                DatabaseBuilder.getDatabase(context).getNoteDao().delete(noteList.get(position))
-                return true
+                deleteNote(position)
+                return false
             }
-
         })
+
     }
 }

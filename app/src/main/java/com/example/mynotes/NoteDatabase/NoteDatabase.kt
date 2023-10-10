@@ -6,7 +6,7 @@ import com.example.mynotes.dao.NoteDao
 import com.example.mynotes.models.NoteTable
 
 
-@Database(entities = [NoteTable::class], exportSchema = false , version = 3)
+@Database(entities = [NoteTable::class], exportSchema = false , version = 4)
 abstract class NoteDatabase:RoomDatabase() {
     abstract fun getNoteDao() : NoteDao
 }

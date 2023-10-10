@@ -1,5 +1,6 @@
 package com.example.mynotes.dao
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
@@ -21,7 +22,7 @@ interface NoteDao {
     fun delete(note: NoteTable)
 
     @Query("SELECT * FROM note_table")
-    fun readNotes(): List<NoteTable>
+    fun readNotes(): LiveData<List<NoteTable>>
 
 //    @Delete
 //    fun deleteAll()
