@@ -3,8 +3,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.mynotes.AddActivity">
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/write"
         android:orderInCategory="100"
-        android:title="@string/action_settings"
+        android:title="write"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/save"
+        android:orderInCategory="100"
+        android:title="save"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/view"
+        android:orderInCategory="100"
+        android:title="view"
+        app:showAsAction="never" />
+
 </menu>

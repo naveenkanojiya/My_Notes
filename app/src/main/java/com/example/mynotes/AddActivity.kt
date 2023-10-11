@@ -1,6 +1,7 @@
 package com.example.mynotes
 
 import android.os.Bundle
+import android.view.Menu
 import com.google.android.material.appbar.CollapsingToolbarLayout
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
@@ -18,10 +19,11 @@ class AddActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setSupportActionBar(findViewById(R.id.toolbar))
-        binding.toolbarLayout.title = title
-        binding.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.right_menu,menu)
+        menuInflater.inflate(R.menu.menu_add,menu)
+        return super.onCreateOptionsMenu(menu)
     }
 }
