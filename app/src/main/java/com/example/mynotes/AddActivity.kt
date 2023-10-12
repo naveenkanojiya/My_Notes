@@ -6,10 +6,14 @@ import com.google.android.material.appbar.CollapsingToolbarLayout
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
+import com.example.mynotes.ViewModels.AddActivityViewModel
 import com.example.mynotes.databinding.ActivityAddBinding
 
 class AddActivity : AppCompatActivity() {
 
+
+    private lateinit var addActivityViewModel: AddActivityViewModel
     private lateinit var binding: ActivityAddBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,6 +21,7 @@ class AddActivity : AppCompatActivity() {
 
         binding = ActivityAddBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        addActivityViewModel = ViewModelProvider(this).get(AddActivityViewModel::class.java)
 
         setSupportActionBar(findViewById(R.id.toolbar))
     }
