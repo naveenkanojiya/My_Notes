@@ -2,6 +2,7 @@ package com.example.mynotes
 
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
 import com.google.android.material.appbar.CollapsingToolbarLayout
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
@@ -29,6 +30,16 @@ class AddActivity : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.right_menu,menu)
         menuInflater.inflate(R.menu.menu_add,menu)
-        return super.onCreateOptionsMenu(menu)
+
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+
+        when(item.itemId){
+
+        }
+        return super.onOptionsItemSelected(item)
     }
 }
